@@ -1,15 +1,12 @@
 pipeline {
-  agent any
-  stages {
-    stage('version') {
-      steps {
-        sh 'ls -l'
-      }
+    stages {
+        stage('init') {
+            steps {
+                script {
+                    env.myVariable = 'some value'
+                }
+            }
+        }
+        // Other stages...
     }
-    stage('hello') {
-      steps {
-        sh 'pwsh hello.ps1'
-      }
-    }
-  }
 }
