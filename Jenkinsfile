@@ -1,15 +1,13 @@
 pipeline {
-  agent any
-  stages {
-    stage('version') {
-      steps {
-        sh 'pwsh --version'
-      }
+    agent any
+    stages {
+        stage('hello') {
+            steps {
+                bat '''
+                @echo off
+                echo Hello, world!
+                '''
+            }
+        }
     }
-    stage('hello') {
-      steps {
-        sh 'pwsh hello.ps1'
-      }
-    }
-  }
 }
